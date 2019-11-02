@@ -5,7 +5,7 @@ body {
 h1 {
     font-family:  'Montserrat', sans-serif;
     text-align: center;
-    color: indigo;
+    color: olive; 
 }
 
 div#app{
@@ -17,8 +17,8 @@ a {
     font-family: 'Montserrat', sans-serif;
     color: honeydew;
     border-style: solid;
-    border-color: indigo;
-    background-color: indigo;
+    border-color: green;
+    background-color: green;
     border-radius: 10%;
     margin: 1%;
     padding: 0.5%;

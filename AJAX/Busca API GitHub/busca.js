@@ -44,10 +44,26 @@ function addTodo(){
         axios.get('https://api.github.com/users/'+todoText+'/repos')
             .then(function(response){
             console.log(response);
-            var gitHub = document.createElement('p');
-            var gitHubText = document.createTextNode(JSON.stringify(response.data));
-            gitHub.appendChild(gitHubText);
-            listElement.appendChild(gitHub);
+            var gitHubLoginP = document.createElement('p');
+            var gitHubLogin = document.createTextNode('Login: ' + JSON.stringify(response.data[0].owner.login));
+            
+            var gitHubIdP = document.createElement('p');
+            var gitHubId = document.createTextNode('ID:  ' + JSON.stringify(response.data[0].owner.id));
+
+            var gitHubTypeP = document.createElement('p');
+            var gitHubType = document.createTextNode('Tipo: ' + JSON.stringify(response.data[0].owner.type));
+            
+            var gitHubCommitsP = document.createElement('p');
+            var gitHubCommits = document.createTextNode('Commits: ' + JSON.stringify(response.data[0].commits_url));
+            
+            gitHubLoginP.appendChild(gitHubLogin);
+            gitHubIdP.appendChild(gitHubId);
+            gitHubTypeP.appendChild(gitHubType);
+            gitHubCommitsP.appendChild(gitHubCommits);
+            listElement.appendChild(gitHubLoginP);
+            listElement.appendChild(gitHubIdP);
+            listElement.appendChild(gitHubTypeP);
+            listElement.appendChild(gitHubCommitsP);
             })
             .catch(function(error){
             console.warn(error);
